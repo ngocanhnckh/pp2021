@@ -84,6 +84,7 @@ def main():
             printCourses()
         if (option=="5"):
             printMark()
+    print("Just a friendly goodbye")
 if __name__ == "__main__":
     main()
 
