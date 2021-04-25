@@ -1,0 +1,3 @@
+Nguyen Ngoc Anh,10,23/03/2001,15.35
+Tran Ngoc Hieu Nam,54,01/12/2001,16.05
+Vo Chi Dat,69,010120010,0.0
