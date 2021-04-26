@@ -9,6 +9,21 @@ def addMarkFunction(sid,cid,m):
     marks.append(ma)
     s.gpa = output.getGPA(sid)
 
+
+def addMark():
+    output.printStudents()
+    sID = input("Select a student by his id: ")
+    print("You selected " + str(sID))
+    for student in students:
+        #print("checking " + student.getID())
+        if (int(student.getID()) == int(sID)):
+            print("Matched!")
+            output.printCourses()
+            cID = int(input("Select a course by its id: "))
+            m = input("Enter mark:")
+            addMarkFunction(sID,cID,m)
+
+
 def lazyInput():
     students.append(student("Nguyen Ngoc Anh","23/03/2001",10))
     students.append(student("Tran Ngoc Hieu Nam","01/12/2001",54))
@@ -30,6 +45,8 @@ def lazyInput():
     addMarkFunction(54,2,20)
     addMarkFunction(54,2,19)
     addMarkFunction(54,2,18)
+   
+
 
 def InputFunction():
     nS=int(input("Num of students: "))

@@ -14,6 +14,13 @@ class student():
         self.dob=dob
         self.studentid=studentid
 
+def addMark():
+    printStudents()
+    sID = int(input("Select a student by his id: "))
+    printCourses()
+    cID = int(input("Select a course by its id: "))
+    m = input("Enter mark:")
+    mark.append({"studentID":sID,"courseID":cID,"mark":m})
     def display(self):
         print("Student {0} has ID {1} with date of birth: {2}".format(self.name,self.studentid,self.dob))
         

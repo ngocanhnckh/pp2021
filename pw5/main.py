@@ -4,9 +4,12 @@ import numpy
 from domains import student, course, mark
 import input as inp
 import output
+import os
+from zipfile import ZipFile
 
 def main():
-
+    with ZipFile("students.dat","r") as zip:
+        zip.extractall()
     option = "-1"
     print("""
     (                                                                                     
@@ -31,7 +34,7 @@ def main():
     8. Show sorted students
     9. Exit()
     """)
-    inp.lazyInput()
+    inp.loadData()
     while (option != "9"):
         option = input("Your option: ")
         if (option=="1"):
@@ -50,6 +53,8 @@ def main():
             output.showWeightedSum()
         if (option=="8"):
             output.sortstudentbyGPA()
+
+    output.writeZip()
     print("Just a friendly goodbye")
 
 if __name__ == "__main__":

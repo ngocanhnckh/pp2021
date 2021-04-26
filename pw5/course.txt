@@ -1,3 +1,0 @@
-Math,1,4
-Python,2,3
-Hacking Course,3,10

@@ -138,8 +138,9 @@ def printMark():
     printStudents()
     sID = input("Which student? (Select by id): ")
     for mark in marks:
-        if (mark.sid == float(sID)):
+        if (str(mark.sid) == str(sID)):
             mark.printMark()
+
 
 
 ## AddMark

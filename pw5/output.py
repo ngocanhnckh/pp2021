@@ -2,14 +2,24 @@ import curses
 from domains import student, course, mark, students, courses, marks
 import numpy
 import math
-
+from zipfile import ZipFile
+import os
+def writeZip():
+    with ZipFile("students.dat","w") as zip:
+        zip.write("student.txt")
+        zip.write("course.txt")
+        zip.write("mark.txt")
+    zip.close()
+    os.remove("student.txt")
+    os.remove("course.txt")
+    os.remove("mark.txt")
 
 def getGPA(sid):
     smark = []
     for mark in marks:
-        if (mark.sid == float(sid)):
-            smark.append(mark.getMark())
-    return numpy.average(smark)
+        if (str(mark.sid) == str(sid)):
+            smark.append(float(mark.getMark()))
+    return float(numpy.average(smark))
             
 def getWeightedSum(sid):
     sum = 0

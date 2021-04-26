@@ -8,8 +8,8 @@ def getGPA(sid):
     smark = []
     for mark in marks:
         if (mark.sid == float(sid)):
-            smark.append(mark.getMark())
-    return numpy.average(smark)
+            smark.append(float(mark.getMark()))
+    return float(numpy.average(smark))
             
 def getWeightedSum(sid):
     sum = 0
@@ -38,8 +38,9 @@ def printMark():
     printStudents()
     sID = input("Which student? (Select by id): ")
     for mark in marks:
-        if (mark.sid == float(sID)):
+        if (str(mark.sid) == str(sID)):
             mark.printMark()
+
 
 def sortstudentbyGPA():
     newlist = sorted(students, key=lambda x: x.gpa, reverse=True)
